@@ -1,4 +1,4 @@
-#!/user/bin/env bash
+#!/usr/bin/env bash
 #bash script accepting 2 arguments from a subdomain and pointing to a destination IP
 print_domain_record () {
     record_and_ip=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $4, $NF}')
